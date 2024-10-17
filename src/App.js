@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './Components/Sidebar';
+import Home from './Pages/Home';
+import Stores from './Pages/Stores';
+import Products from './Pages/Products';
+import Settings from './Pages/Settings';
+import AddProduct from './Pages/AddProduct';
+import AddProductVariants from './Pages/ViewProduct';
+import Combinations from './Pages/Combinations';
+import Price from './Pages/PriceInfo';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="flex h-[100vh] font-work-sans">
+        {/* Sidebar */}
+        <Sidebar />
+
+        {/* Main Content */}
+        <div className="flex-1 p-8 h-full bg-white">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/stores" element={<Stores />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/AddProducts" element={<AddProduct />} />
+            <Route path="/ViewProducts" element={< AddProductVariants />} />
+            <Route path="/Combinations" element={< Combinations />} />
+            <Route path="/Price" element={< Price />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
