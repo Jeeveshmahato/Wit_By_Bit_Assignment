@@ -20,9 +20,9 @@ const App = () => {
         {/* Main Content */}
         <div className="flex-1 p-8 h-full bg-white">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Products />} />
             <Route path="/stores" element={<Stores />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/Home" element={<Home />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/AddProducts" element={<AddProduct />} />
             <Route path="/ViewProducts" element={< AddProductVariants />} />
